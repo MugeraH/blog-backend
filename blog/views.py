@@ -54,3 +54,10 @@ class BlogDetailView(mixins.RetrieveModelMixin,
     def delete(self, request, *args, **kwargs):
         return self.destroy(request, *args, **kwargs)
     
+        
+class LatestBlogDetailView(APIView):
+    def get(self,request,id):
+        blog = Blog.get_latest_blog()
+        serializer = BlogSerializer(blog, many=True)
+        return Response(serializer.data)
+    

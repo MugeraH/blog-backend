@@ -180,4 +180,10 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# DJOSER = {
+#     'LOGIN_FIELD':'email'
+# }
+
+
 # django_heroku.settings(locals())

@@ -37,6 +37,11 @@ class Blog(models.Model):
         self.delete()
         
     @classmethod
+    def get_latest_blog(cls):
+        blog = Blog.objects.all().order_by('id').last()
+        return blog
+    
+    @classmethod
     def get_blog_by_id(cls,id):
         blog = Blog.objects.filter(pk=id)
         return blog
